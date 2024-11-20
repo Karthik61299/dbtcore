@@ -1,0 +1,17 @@
+
+version: 2
+
+models:
+  - name: avg_time_film
+    description: "test the dq of avg_time_film"
+    columns:
+      - name: category
+        data_tests:
+          - unique
+          - not_null
+          #- accepted_values:
+           # values:
+            #  - "Action"
+             # - "Animation"
+              #- "Children"
+
