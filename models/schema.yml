@@ -1,0 +1,36 @@
+version: 2
+sources:
+- name: dbt
+  schema: public
+  tables:
+  - name: actor
+    description: Description for table actor
+    columns:
+    - name: actor_id
+      description: Description for actor_id
+      tests:
+      - not_null
+      - unique
+  - name: customer
+    description: Description for table customer
+    columns:
+    - name: activebool
+      description: Description for activebool
+      tests:
+      - not_null
+      - unique
+      - accepted_values:
+          values:
+          - 'true'
+          - 'false'
+  - name: film_category
+    description: Description for table film_category
+    columns:
+    - name: film_id
+      description: Description for film_id
+      tests:
+      - not_null
+      - unique
+      - relationships:
+          field: film_id
+          to: ref('film')
