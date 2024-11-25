@@ -11,18 +11,6 @@ sources:
       tests:
       - not_null
       - unique
-  - name: customer
-    description: Description for table customer
-    columns:
-    - name: activebool
-      description: Description for activebool
-      tests:
-      - not_null
-      - unique
-      - accepted_values:
-          values:
-          - 'true'
-          - 'false'
   - name: film_category
     description: Description for table film_category
     columns:
@@ -34,3 +22,14 @@ sources:
       - relationships:
           field: film_id
           to: ref('film')
+  - name: customer
+    description: Description for table customer
+    columns:
+    - name: activebool
+      description: Description for activebool
+      tests:
+      - not_null
+      - unique
+      - accepted_values:
+          values:
+          - 'false'
