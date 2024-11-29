@@ -9,27 +9,35 @@ sources:
     - name: actor_id
       description: Description for actor_id
       tests:
-      - not_null
-      - unique
+      - not_null:
+          store_failures: true
+      - unique:
+          store_failures: true
   - name: film_category
     description: Description for table film_category
     columns:
     - name: film_id
       description: Description for film_id
       tests:
-      - not_null
-      - unique
+      - not_null:
+          store_failures: true
+      - unique:
+          store_failures: true
       - relationships:
           field: film_id
           to: ref('film')
+          store_failures: true
   - name: customer
     description: Description for table customer
     columns:
     - name: activebool
       description: Description for activebool
       tests:
-      - not_null
-      - unique
+      - not_null:
+          store_failures: true
+      - unique:
+          store_failures: true
       - accepted_values:
           values:
           - 'false'
+          store_failures: true
