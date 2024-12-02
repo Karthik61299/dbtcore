@@ -33,3 +33,19 @@ sources:
       - accepted_values:
           values:
           - 'false'
+    - name: active
+      description: Description for active
+      tests:
+      - not_null
+      - accepted_values:
+          values:
+          - '1'
+  - name: film
+    description: Description for table film
+    columns:
+    - name: film_id
+      description: Description for film_id
+      tests:
+      - relationships:
+          field: film_id
+          to: ref('film_actor')
