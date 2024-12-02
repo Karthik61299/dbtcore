@@ -33,13 +33,6 @@ sources:
       - accepted_values:
           values:
           - 'false'
-    - name: active
-      description: Description for active
-      tests:
-      - not_null
-      - accepted_values:
-          values:
-          - '1'
   - name: film
     description: Description for table film
     columns:
