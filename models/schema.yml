@@ -39,7 +39,7 @@ sources:
       - not_null
       - accepted_values:
           values:
-          - 1
+          - '1'
   - name: film
     description: Description for table film
     columns:
