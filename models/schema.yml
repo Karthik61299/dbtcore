@@ -11,17 +11,6 @@ sources:
       tests:
       - not_null
       - unique
-  - name: film_category
-    description: Description for table film_category
-    columns:
-    - name: film_id
-      description: Description for film_id
-      tests:
-      - not_null
-      - unique
-      - relationships:
-          field: film_id
-          to: ref('film')
   - name: customer
     description: Description for table customer
     columns:
@@ -40,12 +29,68 @@ sources:
       - accepted_values:
           values:
           - '1'
-  - name: film
-    description: Description for table film
+  - name: film_category
+    description: Description for table film_category
     columns:
     - name: film_id
       description: Description for film_id
       tests:
-      - relationships:
-          field: film_id
-          to: ref('film_actor')
+      - not_null
+      - unique
+  - name: rental
+    description: Description for table rental
+    columns:
+    - name: staff_id
+      description: Description for staff_id
+      tests:
+      - not_null
+      - accepted_values:
+          values:
+          - '2'
+  - name: staff
+    description: Description for table staff
+    columns:
+    - name: picture
+      description: Description for picture
+      tests:
+      - not_null
+  - name: payment
+    description: Description for table payment
+    columns:
+    - name: payment_id
+      description: Description for payment_id
+      tests:
+      - not_null
+      - unique
+  - name: language
+    description: Description for table language
+    columns:
+    - name: name
+      description: Description for name
+      tests:
+      - not_null
+      - unique
+      - accepted_values:
+          values:
+          - English
+          - Italian
+          - Japanese
+          - Mandarin
+          - French
+          - German
+  - name: inventory
+    description: Description for table inventory
+    columns:
+    - name: film_id
+      description: Description for film_id
+      tests:
+      - not_null
+      - unique
+  - name: city
+    description: Description for table city
+    columns:
+    - name: city
+      description: Description for city
+      tests:
+      - not_null
+      - unique
