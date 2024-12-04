@@ -62,22 +62,6 @@ sources:
       tests:
       - not_null
       - unique
-  - name: language
-    description: Description for table language
-    columns:
-    - name: name
-      description: Description for name
-      tests:
-      - not_null
-      - unique
-      - accepted_values:
-          values:
-          - English
-          - Italian
-          - Japanese
-          - Mandarin
-          - French
-          - German
   - name: inventory
     description: Description for table inventory
     columns:
@@ -94,3 +78,17 @@ sources:
       tests:
       - not_null
       - unique
+  - name: language
+    description: Description for table language
+    columns:
+    - name: name
+      description: Description for name
+      tests:
+      - not_null
+      - unique
+      - accepted_values:
+          values:
+          - English
+          - Italian
+          - Japanese
+          - Mandarin
